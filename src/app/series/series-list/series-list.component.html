@@ -1,0 +1,38 @@
+<div class="header">
+    <img src="https://png.pngtree.com/element_our/sm/20180516/sm_5afbfa0103285.jpg"width="50" style="float: left; margin-left: 10px; margin-bottom: 15px;"/> 
+      <h4>TV Series</h4>
+  </div>
+
+
+<div *ngIf="selected" class="card">
+    <app-series-detail [series]=" selectedSeries"></app-series-detail>
+  </div>
+
+  
+<div class="container-fluid mt-2">
+  <div class="col-6">
+   <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Seasons</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let serie of series" (click)="onSelected(serie)">
+                <td>{{ serie.id }}</td>
+                <td>{{ serie.name }}</td>
+                <td>{{ serie.channel}}</td>
+                <td>{{ serie.seasons }}</td>
+              
+            </tr>
+        </tbody>
+    </table>
+    <p> Promedio Series          {{promedioSeries}}</p>
+    </div>
+
+</div>
+
